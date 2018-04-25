@@ -4,6 +4,12 @@
 
 [简答题](./简答题.md)
 
+## checkcheckcheck
+
+直接查看 `checkcheckcheck` 目录
+
+[checkcheckcheck](./checkcheckcheck/README.md)
+
 ## code
 
 所有的代码均放置在 `source` 目录下以题目序号命名的目录里.
@@ -90,30 +96,6 @@ if __name__ == '__main__':
  print("done")
 ```
 
-### 0007. You are given a text, which contains different english letters and punctuation symbols. You should find the most frequent letter in the text. The letter returned must be in lower case.While checking for the most wanted letter, casing does not matter, so for the purpose of your search, "A" == "a". Make sure you do not count punctuation symbols, digits and whitespaces, only letters.If you have two or more letters with the same frequency, then return the letter which comes first in the latin alphabet. For example -- "one" contains "o", "n", "e" only once for each, thus we choose "e"
-
-Input: A text for analysis as a string.
-Output: The most frequent letter in lower case as a string.
-
-```python
-def checkio(text):
-
-    #replace this for solution
-    return 'a'
-
-if __name__ == '__main__':
-    #These "asserts" using only for self-checking and not necessary for auto-testing
-    assert checkio("Hello World!") == "l", "Hello test"
-    assert checkio("How do you do?") == "o", "O is most wanted"
-    assert checkio("One") == "e", "All letter only once."
-    assert checkio("Oops!") == "o", "Don't forget about lower case."
-    assert checkio("AAaooo!!!!") == "a", "Only letters."
-    assert checkio("abe") == "a", "The First."
-    print("Start the long test")
-    assert checkio("a" * 9000 + "b" * 1000) == "a", "Long."
-    print("The local tests are done.")
-```
-
-### 0008. 整数分解
+### 0007. 整数分解
 
 [查看题目](https://github.com/Cmelia/note/blob/changlangyue/assets/jd-02.jpeg)
