@@ -93,3 +93,16 @@ https://localhost.com/a/b/file2long.jpg
 \b[tT]h[ceinry]*\b
 
 ```
+
+## 需求：将每行特定格式数据格式化为SQL语句
+
+```shell
+源串：
+1 2017-04-11 Zjmainstay
+2 2017-04-12 Nobody
+3 2017-04-13 Somebody
+预期：替换得到
+INSERT INTO table_log(`id`, `created_at`, `author`) values('1', '2017-04-11', 'Zjmainstay');
+INSERT INTO table_log(`id`, `created_at`, `author`) values('2', '2017-04-12', 'Nobody');
+INSERT INTO table_log(`id`, `created_at`, `author`) values('3', '2017-04-13', 'Somebody');
+```
