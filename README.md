@@ -12,6 +12,10 @@
 
 [checkcheckcheck](./checkcheckcheck/README.md)
 
+## regular expression
+
+[regular expression](./regular-expression.md)
+
 ## code
 
 所有的代码均放置在 `source` 目录下以题目序号命名的目录里.
