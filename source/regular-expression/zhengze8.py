@@ -15,3 +15,10 @@ for word in words:
     g=pattern.search(word)
     if g:
         print(re.sub(pattern,"INSERT INTO table_log(`id`, `created_at`, `author`)values('"+g.group(1)+"', '"+g.group(2)+"', '"+g.group(3)+"');",word))
+
+# c
+# regex = r"(\d) ([\d\-]+) (\w+)"
+# subst = r"INSERT INTO table_log(`id`, `created_at`, `author`) values('\1', '\2', '\3');"
+# result = re.sub(regex, subst, string, 0, re.MULTILINE)
+# if result:
+#     print(result)
