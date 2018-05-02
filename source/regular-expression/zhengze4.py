@@ -29,9 +29,9 @@ for word in words:
     if pattern.search(word):
         print word
 
-^(?!([a-zA-Z\d]*|[a-zA-Z\-_=]*|[\d\-_=]*)$)[a-zA-Z\d\-_=]{6,16}$
+# ^(?!([a-zA-Z\d]*|[a-zA-Z\-_=]*|[\d\-_=]*)$)[a-zA-Z\d\-_=]{6,16}$
 
-(?!pattern)
-非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，
-该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”
-中的“Windows”，但不能匹配“Windows2000”中的“Windows”。
+# (?!pattern)
+# 非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，
+# 该匹配不需要获取供以后使用。例如“Windows(?!95|98|NT|2000)”能匹配“Windows3.1”
+# 中的“Windows”，但不能匹配“Windows2000”中的“Windows”。
