@@ -33,8 +33,9 @@ def isletter(text):
     for s in text:
         if pattern.search(s):
             ss = s + ss
-    sslow=ss.lower()
-    return sslow[::-1]
+    sslow=ss.lower()[::-1]
+    sslow=sorted(sslow)
+    return sslow
 def checkio(text):
     a = isletter(text)
 
