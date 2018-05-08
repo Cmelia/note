@@ -14,3 +14,11 @@ https://localhost.com/a/b/file2long.jpg
 pattern = re.compile(r'^.*/(.*$)')
 for w in test_str.split():
     print(pattern.match(w).groups()[0])
+
+#方法二
+strlist=test_str.split()
+for s in strlist:
+    dizhi=s.split('/',-1)
+    print dizhi[-1]
+
+print([x.split('/',-1)[-1] for x in test_str.split()])
