@@ -1,34 +1,49 @@
-
+# -*- coding:utf-8 -*-
+import re
 """
-给你一个其中包含不同的英文字母和标点符号的文本，你要找到其中出现最多的字母，返回的字母必须是小写形式，
-当检查最想要的字母时，不区分大小写，所以在你的搜索中 "A" == "a"。 请确保你不计算标点符号，数字和空格，只计算字母。
-
-如果你找到 两个或两个以上的具有相同的频率的字母， 返回那个先出现在字母表中的字母。 例如 -- “one”包含“o”，“n”，“e”每个字母一次，因此我们选择“e”。
-
-输入: 用于分析的文本.
-
-输出: 最常见的字母的小写形式。
-
-范例:
-checkio("Hello World!") == "l"
-checkio("How do you do?") == "o"
-checkio("One") == "e"
-checkio("Oops!") == "o"
-checkio("AAaooo!!!!") == "a"
-checkio("abe") == "a"
-
-如何使用： 对于大多数的解密任务，你需要知道各种字母出现在一段文字的频率。例如：如果我们知道在哪个字母出现的频率，我们可以很容易地破解一个简单的加法密码或替换密码。这是语言专家有趣的事情！
-
-前提::
+找到其中出现最多的字母，返回的字母必须是小写形式，
+请确保你不计算标点符号，数字和空格，只计算字母。
+前提:
 密码只包含ASCII码符号
 0 < len(text) ≤ 105
 
 """
 
+# 方法一：26个字母，每个都统计一遍不管出现还是不出现
 def checkio(text):
-    
-    # your answer
-    pass
+    num = 0
+    maxn = 0
+    maxs='a'
+    for i in range(26):
+        s= chr(i + ord('a'))
+        temp = num
+        textlow=text.lower()
+        num = textlow.count(s)
+        if num>maxn:
+            maxn=num
+            maxs=s
+
+    return maxs
+
+
+# 方法二：哪个字母出现就统计哪个字母
+def isletter(text):
+    pattern = re.compile(r'[a-zA-Z]')
+    ss = ''
+    for s in text:
+        if pattern.search(s):
+            ss = s + ss
+    sslow=ss.lower()
+    return sslow[::-1]
+def checkio(text):
+    a = isletter(text)
+
+    l=[]
+    for i in a:
+        num=a.count(i)
+        l.append(num)
+    ind=l.index(max(l))
+    return a[ind]
 
 
 if __name__ == '__main__':
