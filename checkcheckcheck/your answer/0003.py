@@ -15,9 +15,16 @@ def checkio(data):
             datacopy.remove(i)
     return datacopy
 
+<<<<<<< HEAD
 # 方法二
 def checkio(data):
     return [i for i in data if data.count(i)>1]
+=======
+# c
+def checkio(data: list) -> list:
+
+    return [i for i in data if data.count(i) > 1]
+>>>>>>> e4212566eee731d2227b0dbf533ec93369279f70
 
 
 if __name__ == "__main__":

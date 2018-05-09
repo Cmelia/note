@@ -62,6 +62,15 @@ def checkio(text):
     first = c.most_common()[0][1]
     return sorted(filter(lambda x: x[1] == first, c.most_common()))[0][0]
 
+# c
+def checkio(text):
+    from collections import Counter
+    c = Counter(w for w in text.lower() if w.islower())
+
+    first = c.most_common()[0][1]
+
+    return sorted(filter(lambda x: x[1] == first, c.most_common()))[0][0]
+
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
