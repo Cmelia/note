@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import re
+from collections import Counter
 """
 找到其中出现最多的字母，返回的字母必须是小写形式，
 请确保你不计算标点符号，数字和空格，只计算字母。
@@ -8,7 +9,7 @@ import re
 0 < len(text) ≤ 105
 
 """
-
+'''
 # 方法一：26个字母，每个都统计一遍不管出现还是不出现
 def checkio(text):
     num = 0
@@ -45,12 +46,27 @@ def checkio(text):
         l.append(num)
     ind=l.index(max(l))
     return a[ind]
+'''
+
+
+# 方法三
+def checkio(data):
+    c=Counter(re.sub(r'[^a-zA-Z]','',data.lower()))
+    li=[c[key] for key in c]
+    return list(c)[li.index(max(li))]
+
+
+# 方法四
+def checkio(text):
+    c = Counter(w for w in text.lower() if w.islower())  # isalpha()也可以
+    first = c.most_common()[0][1]
+    return sorted(filter(lambda x: x[1] == first, c.most_common()))[0][0]
 
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
     assert checkio("Hello World!") == "l", "Hello test"
-    assert checkio("How do you do?") == "o", "O is most wanted"
+    assert checkio("How do you do?") == "o", "o is most wanted"
     assert checkio("One") == "e", "All letter only once."
     assert checkio("Oops!") == "o", "Don't forget about lower case."
     assert checkio("AAaooo!!!!") == "a", "Only letters."

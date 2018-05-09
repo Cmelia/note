@@ -6,16 +6,18 @@
 解决这个任务时，不能改变列表的顺序。
 例如：[1，2，3，1，3] 1和3是非唯一元素，结果将是 [1, 3, 1, 3]。
 """
-
+# 方法一
 def checkio(data):
     datacopy=data[:]
     for i in data:
-
         num=data.count(i)
-
         if num==1 :
             datacopy.remove(i)
     return datacopy
+
+# 方法二
+def checkio(data):
+    return [i for i in data if data.count(i)>1]
 
 
 if __name__ == "__main__":
