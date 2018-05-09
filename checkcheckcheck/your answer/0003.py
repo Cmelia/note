@@ -17,6 +17,11 @@ def checkio(data):
             datacopy.remove(i)
     return datacopy
 
+# c
+def checkio(data: list) -> list:
+
+    return [i for i in data if data.count(i) > 1]
+
 
 if __name__ == "__main__":
     #These "asserts" using only for self-checking and not necessary for auto-testing
