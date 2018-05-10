@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+"""
 def checkio(result):
     for i in range(3):
         if result[i][0]==result[i][1]:
@@ -14,6 +14,16 @@ def checkio(result):
             return result[0][2]
         else:
             return "D"
+"""
+
+
+# 方法二
+def checkio(game_result:list)-> str:
+    rows = game_result
+    cols = map(''.join, zip(*rows))
+    diags = map(''.join, zip(*[(r[i], r[2 - i]) for i, r in enumerate(rows)]))
+    lines = rows + list(cols) + list(diags)
+    return 'X' if ('XXX' in lines) else 'O' if ('OOO' in lines) else 'D'
 
 
 if __name__ == '__main__':
