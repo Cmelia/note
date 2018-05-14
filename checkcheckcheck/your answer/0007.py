@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-
+'''
 def min(*args, **kwargs):
     if args!=None:
         print(args,'111')
@@ -16,17 +16,11 @@ def min(*args, **kwargs):
                 min = kwargs[i + 1]
 
     return min
-
-
-
+'''
 
 def max(*args, **kwargs):
     key = kwargs.get("key", None)
-    return 0
-
-
-l=min([1,2,3,2])
-print(l)
+    return get_first_from_sorted(args, key,True)
 
 
 # c
